@@ -7,9 +7,8 @@
 </video>
 
 * How it is going
-<video width="320" height="240" controls>
-  <source src="docs/episode_01.mp4" type="video/mp4">
-</video>
+
+[![Episode 01](docs/episode_01.gif)](docs/episode_01.mp4)
 
 The challenge asks how can we use human video, to inform robotic control.
 
