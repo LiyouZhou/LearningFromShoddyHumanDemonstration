@@ -1,6 +1,7 @@
 # Learning From Shoddy Human Demonstration
 
-> It is often said: "Imitation is the sincerest form of flattery that mediocrity can pay to greatness." But in the field of robotics, imitation is the true greatness.
+> [!TIP]
+> It is often said, “Imitation is the sincerest form of flattery that mediocrity can pay to greatness.” But in the field of robotics, imitation is true greatness.
 
 <table border="0">
 	<tr><td align="center">
@@ -90,14 +91,14 @@ The tracked fingers are used to calculate a gripper open/close state. And the wi
 
 Using these additional rewards, I get the following result:
 
-The policy now successfully grabs the bowl and makes a vague attempt at trying to lift it.
+The policy now successfully grabs the bowl and makes a vague attempt to lift it.
 
 <table border="0">
 	<tr><td align="center">
-		<a href="docs/all_rewards.mp4"><img src="docs/all_rewards.gif" alt="Combined rewards run" width="400"></a><br>
+		<a href="docs/all_rewards.mp4"><img src="docs/all_rewards.gif" alt="Combined rewards run" height="200"></a><br>
 		<sub>Fig. 8: Robot evaluation with the combined reward signals.</sub>
 	</td><td align="center">
-		<img src="docs/all_rewards_training_graph.png" alt="Combined rewards training graph" width="200"><br>
+		<img src="docs/all_rewards_training_graph.png" alt="Combined rewards training graph" height="200"><br>
 		<sub>Fig. 9: Training curve, reward vs steps, for the combined-reward run.</sub>
 	</td></tr>
 </table>
@@ -107,21 +108,24 @@ The policy now successfully grabs the bowl and makes a vague attempt at trying t
 
 At this point, it seems that the engineered rewards no longer align with task success rate. More training or higher rewards does not improve success. Success rate sits still at zero.
 
-This is the point where we should let go and let the robot explore the world and find its own success. In the final leg of training, the learning rate is turned down so that it does not deviate too much from the current policy. While the entropies increased to encourage exploration. Then, finally, once the policy is able to maintain a good level of success rate, all other rewards are turned off, so the policy can align itself to get the best success rate.
+This is the point where we should let go and let the robot explore the world and find its own success. In the final leg of training, the learning rate is turned down so that it does not deviate too much from the current policy. The entropy is increased to encourage exploration. Then, finally, once the policy is able to maintain a good level of success rate, all other rewards are turned off, so the policy can align itself to get the best success rate.
 
 
 <table border="0">
 	<tr><td align="center">
 		<img src="docs/success_rate_final_hurdle.png" alt="Average success rate across 2 runs. First run in red with all reward signals, 2nd run in orange continuing from the first using only sparse success reward." width="200"><br>
-		<sub>Fig. 10: Average success rate across 2 runs. First run in red with all reward signals, 2nd run in orange continuing from the first using only sparse success reward.</sub>
-	</td>
-    <td align="center">
-		<a href="docs/final_hurdle.mp4"><img src="docs/final_hurdle.gif" alt="Final-hurdle robot evaluation" width="400" height="200"></a><br>
-		<sub>Fig. 11: Final robot policy. Success rate > 40%</sub>
+		<sub>Fig. 10: Average success rate across 2 runs.<br>
+			First run in red with all reward signals.<br>
+			Second run in orange continuing from the first using only sparse success reward.</sub>
 	</td>
     </tr>
 </table>
 
 <table border="0">
-	<tr></tr>
+	<tr>
+		<td align="center">
+		<a href="docs/final_hurdle.mp4"><img src="docs/final_hurdle.gif" alt="Final-hurdle robot evaluation" width="400" height="200"></a><br>
+		<sub>Fig. 11: Final robot policy. Success rate > 40%</sub>
+		</td>
+	</tr>
 </table>
