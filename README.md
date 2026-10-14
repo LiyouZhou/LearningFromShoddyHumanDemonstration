@@ -78,11 +78,11 @@ The tracked fingers are used to calculate a gripper open/close state. And the wi
 
 <table border="0">
 	<tr><td align="bottom">
-		<img src="docs/z_supervision.png" alt="Object-height supervision" width="300"><br>
+		<img src="docs/z_supervision.png" alt="Object-height supervision" height="200"><br>
 		<sub>Fig.6: Object-height supervision from the tabletop tape.</sub>
 	</td>
     <td align="bottom">
-		<img src="docs/gripper_supervision.png" alt="Gripper supervision" width="200"><br>
+		<img src="docs/gripper_supervision.png" alt="Gripper supervision" height="200"><br>
 		<sub>Fig.7: Gripper-state supervision from the human demonstration.</sub>
 	</td>
     </tr>
@@ -96,11 +96,7 @@ The policy now successfully grabs the bowl and makes a vague attempt at trying t
 	<tr><td align="center">
 		<a href="docs/all_rewards.mp4"><img src="docs/all_rewards.gif" alt="Combined rewards run" width="400"></a><br>
 		<sub>Fig. 8: Robot evaluation with the combined reward signals.</sub>
-	</td></tr>
-</table>
-
-<table border="0">
-	<tr><td align="center">
+	</td><td align="center">
 		<img src="docs/all_rewards_training_graph.png" alt="Combined rewards training graph" width="200"><br>
 		<sub>Fig. 9: Training curve, reward vs steps, for the combined-reward run.</sub>
 	</td></tr>
@@ -118,12 +114,14 @@ This is the point where we should let go and let the robot explore the world and
 	<tr><td align="center">
 		<img src="docs/success_rate_final_hurdle.png" alt="Average success rate across 2 runs. First run in red with all reward signals, 2nd run in orange continuing from the first using only sparse success reward." width="200"><br>
 		<sub>Fig. 10: Average success rate across 2 runs. First run in red with all reward signals, 2nd run in orange continuing from the first using only sparse success reward.</sub>
-	</td></tr>
+	</td>
+    <td align="center">
+		<a href="docs/final_hurdle.mp4"><img src="docs/final_hurdle.gif" alt="Final-hurdle robot evaluation" width="400" height="200"></a><br>
+		<sub>Fig. 11: Final robot policy. Success rate > 40%</sub>
+	</td>
+    </tr>
 </table>
 
 <table border="0">
-	<tr><td align="center">
-		<a href="docs/final_hurdle.mp4"><img src="docs/final_hurdle.gif" alt="Final-hurdle robot evaluation" width="400" height="200"></a><br>
-		<sub>Fig. 11: Final robot policy. Success rate > 40%</sub>
-	</td></tr>
+	<tr></tr>
 </table>
