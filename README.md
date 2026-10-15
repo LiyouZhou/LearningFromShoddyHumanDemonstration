@@ -133,6 +133,26 @@ The RL converged within 60k steps to this:
 
 I'm blown away by how structurally similar it is already to the original video. The robot, like the human video, goes down towards the bowl and even approaches the bowl on the right-hand side. This is based purely on comparing the direction of the high-dimensional vectors in the embedding space.
 
+<details>
+
+<summary>To Reproduce</summary>
+
+```sh
+uv run ./scripts/train.py \
+		--human-demo-embeddings data/human_demo_embeddings.npy \
+		--total-timesteps 60000 \
+		--eval-freq 20000 \
+		--ckpt-freq 20000 \
+		--similarity-weight 1.0 \
+		--success-weight 500.0 \
+		--gripper-weight 0.0 \
+		--z-weight 0.0 \
+		--ent-coef 0.0
+```
+
+</details>
+
+
 ### More Supervisions
 
 But the visual similarity alone wasn't able to carry the whole task to completion. Because once the robot picks up the bowl, almost the entirety of the camera view is filled up by the bowl itself. Then, from that point on, all the frames look similar.
@@ -180,6 +200,26 @@ The policy now successfully grabs the bowl and makes a vague attempt to lift it.
 	</td></tr>
 </table>
 
+<details>
+
+<summary>To Reproduce</summary>
+
+```sh
+uv run ./scripts/train.py \
+		--human-demo-embeddings data/human_demo_embeddings.npy \
+		--total-timesteps 200000 \
+		--eval-freq 20000 \
+		--ckpt-freq 20000 \
+		--similarity-weight 1.0 \
+		--success-weight 500.0 \
+		--gripper-weight 0.5 \
+		--z-weight 1.0 \
+		--ent-coef 0.0 \
+		--pretrained-policy <ckpt from previous step>
+```
+
+</details>
+
 
 ### The final hurdle
 
@@ -206,6 +246,39 @@ This is the point where we should let go and let the robot explore the world and
 		</td>
 	</tr>
 </table>
+
+<details>
+
+<summary>To Reproduce</summary>
+
+```sh
+uv run ./scripts/train.py \
+		--human-demo-embeddings data/human_demo_embeddings.npy \
+		--total-timesteps 400000 \
+		--eval-freq 20000 \
+		--ckpt-freq 20000 \
+		--similarity-weight 1.0 \
+		--success-weight 500.0 \
+		--gripper-weight 0.5 \
+		--z-weight 1.0 \
+		--ent-coef 0.01 \
+		--learning-rate 0.0001 \
+		--pretrained-policy <ckpt from previous step>
+uv run ./scripts/train.py \
+		--human-demo-embeddings data/human_demo_embeddings.npy \
+		--total-timesteps 400000 \
+		--eval-freq 20000 \
+		--ckpt-freq 20000 \
+		--similarity-weight 0.0 \
+		--success-weight 500.0 \
+		--gripper-weight 0.5 \
+		--z-weight 0.0 \
+		--ent-coef 0.01 \
+		--learning-rate 0.0001 \
+		--pretrained-policy <ckpt from previous step>
+```
+
+</details>
 
 ### Reward Hacking
 
