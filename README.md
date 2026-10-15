@@ -14,7 +14,7 @@ This is an image of task 8 in the Libero goal benchmark suite[^1]. The robot is 
 
 By learning from 50 episodes of teleoperated demonstrations, numerous papers have reported close to 100\% success rate just from pure behaviour cloning[^2][^3][^4]. Teleoperated data have zero visual gap and morphology gap, hence establishing the translation from current camera image to next robot action is relatively easy to do.
 
-[^5] also showed very recently that massively parallel simulation can brute force the emergence of very dexterous multistep skills. Hell, GPT-Astra could probably zero-shot this bad boy if I'm willing to pay the cloud thinking machine some of my hard-earned cash[^8]. Alas, I'm not.
+AlphaNIST[^5] also showed very recently that massively parallel simulation can brute force the emergence of very dexterous multistep skills. Hell, GPT-Astra could probably zero-shot this bad boy if I'm willing to pay the cloud thinking machine some of my hard-earned cash[^8]. Alas, I'm not.
 
 Acknowledging that some of these much better approaches exist, I want to explore an alternative route. This is a video I took on my phone, as the repo title suggests, shoddily produced:
 
@@ -25,7 +25,7 @@ Acknowledging that some of these much better approaches exist, I want to explore
 	</td></tr>
 </table>
 
-Any human who looks at this video will immediately say, "Ah, I know what to do." even though the appearance of the props are completely different in the simulation. That means this short video contains the necessary information to tell someone how to complete the task. Now, the hard problem is: how do we extract this information and give it to the robot in a way that it understands?
+Any human who looks at this video will immediately say, "Ah, I know what to do." even though the appearance of the props are completely different in the simulation. That means this short video already contains all the necessary information to tell someone how to complete the task. Now, the hard problem is: how do we extract this information and give it to the robot in a way that it understands?
 
 ## Pre-trained visual encoders
 
@@ -135,11 +135,11 @@ This is the point where we should let go and let the robot explore the world and
 
 ## Reference
 
-[^1] Liu, Bo, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, and Peter Stone. "Libero: Benchmarking knowledge transfer for lifelong robot learning." Advances in Neural Information Processing Systems 36 (2023): 44776-44791. https://libero-project.github.io/main.html
-[^2] Shukor, Mustafa, Dana Aubakirova, Francesco Capuano, Pepijn Kooijmans, Steven Palma, Adil Zouitine, Michel Aractingi et al. "Smolvla: A vision-language-action model for affordable and efficient robotics." arXiv preprint arXiv:2506.01844 (2025).
-[^3] Shi, Hao, Bin Xie, Yingfei Liu, Lin Sun, Fengrong Liu, Tiancai Wang, Erjin Zhou, Haoqiang Fan, Xiangyu Zhang, and Gao Huang. "Memoryvla: Perceptual-cognitive memory in vision-language-action models for robotic manipulation." In International Conference on Learning Representations, vol. 2026, pp. 18567-18602. 2026.
-[^4] Black, Kevin, Noah Brown, Danny Driess, Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai et al. "$\pi_0 $: A Vision-Language-Action Flow Model for General Robot Control." arXiv preprint arXiv:2410.24164 (2024).
-[^5] Zhang, Octi, Iretiayo Akinola, Rosario Scalise, Mateo Guaman Castro, Patrick Yin, Tobias Widmer, Miles Macklin et al. "AlphaNIST: Emergent Assembly Skills from Binary Task Rewards." arXiv preprint arXiv:2610.13354 (2026). https://alpha-nist.github.io/
-[^6] Siméoni, Oriane, Huy V. Vo, Maximilian Seitzer, Federico Baldassarre, Maxime Oquab, Cijo Jose, Vasil Khalidov et al. "Dinov3." arXiv preprint arXiv:2508.10104 (2025). https://github.com/facebookresearch/dinov3
-[^7] Zhu, Chenchen, Saksham Suri, Cijo Jose, Maxime Oquab, Marc Szafraniec, Wei Wen, Yunyang Xiong et al. "Efficient Universal Perception Encoder." arXiv preprint arXiv:2603.22387 (2026). https://github.com/facebookresearch/EUPE
-[^8] Zhang, Wenbo, Kaixuan Wang, Yutao Ouyang, Xiaoyu Huang, Liyang Li, Kailun Su, Weiyang Jin et al. "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond." arXiv preprint arXiv:2609.24170 (2026).
+[^1]: Liu, Bo, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, and Peter Stone. "Libero: Benchmarking knowledge transfer for lifelong robot learning." Advances in Neural Information Processing Systems 36 (2023): 44776-44791. https://libero-project.github.io/main.html
+[^2]: Shukor, Mustafa, Dana Aubakirova, Francesco Capuano, Pepijn Kooijmans, Steven Palma, Adil Zouitine, Michel Aractingi et al. "Smolvla: A vision-language-action model for affordable and efficient robotics." arXiv preprint arXiv:2506.01844 (2025).
+[^3]: Shi, Hao, Bin Xie, Yingfei Liu, Lin Sun, Fengrong Liu, Tiancai Wang, Erjin Zhou, Haoqiang Fan, Xiangyu Zhang, and Gao Huang. "Memoryvla: Perceptual-cognitive memory in vision-language-action models for robotic manipulation." In International Conference on Learning Representations, vol. 2026, pp. 18567-18602. 2026.
+[^4]: Black, Kevin, Noah Brown, Danny Driess, Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai et al. "$\pi_0 $: A Vision-Language-Action Flow Model for General Robot Control." arXiv preprint arXiv:2410.24164 (2024).
+[^5]: Zhang, Octi, Iretiayo Akinola, Rosario Scalise, Mateo Guaman Castro, Patrick Yin, Tobias Widmer, Miles Macklin et al. "AlphaNIST: Emergent Assembly Skills from Binary Task Rewards." arXiv preprint arXiv:2610.13354 (2026). https://alpha-nist.github.io/
+[^6]: Siméoni, Oriane, Huy V. Vo, Maximilian Seitzer, Federico Baldassarre, Maxime Oquab, Cijo Jose, Vasil Khalidov et al. "Dinov3." arXiv preprint arXiv:2508.10104 (2025). https://github.com/facebookresearch/dinov3
+[^7]: Zhu, Chenchen, Saksham Suri, Cijo Jose, Maxime Oquab, Marc Szafraniec, Wei Wen, Yunyang Xiong et al. "Efficient Universal Perception Encoder." arXiv preprint arXiv:2603.22387 (2026). https://github.com/facebookresearch/EUPE
+[^8]: Zhang, Wenbo, Kaixuan Wang, Yutao Ouyang, Xiaoyu Huang, Liyang Li, Kailun Su, Weiyang Jin et al. "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond." arXiv preprint arXiv:2609.24170 (2026).
