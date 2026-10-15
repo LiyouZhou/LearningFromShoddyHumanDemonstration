@@ -131,7 +131,7 @@ The RL converged within 60k steps to this:
 	</td></tr>
 </table>
 
-I'm blown away by how structurally similar it is already to the original video. The robot, like the human video, goes down towards the bowl and even approaches the bowl on the right-hand side. This is based purely on comparing the direction of the high-dimensional vectors in the embedding space.
+I'm blown away by how much progress it made already. The robot, like the human video, goes down towards the bowl and even approaches the bowl on the right-hand side. This is based purely on comparing the direction of the high-dimensional vectors in the embedding space.
 
 <details>
 
