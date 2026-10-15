@@ -132,6 +132,13 @@ This is the point where we should let go and let the robot explore the world and
 
 ## Usage
 
+### Download the SAM 2.1 checkpoint
+
+Run from the repo root. The file is about 900 MB.
+
+```bash
+wget -nc -P sam2_checkpoints https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
+```
 
 ## Reference
 
