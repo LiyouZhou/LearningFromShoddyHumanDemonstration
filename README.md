@@ -1,6 +1,6 @@
 # Learning From Shoddy Human Demonstration
 
-<p align="center">
+<p align="left">
 	<a href="#tldr">TL;DR</a> &nbsp;|&nbsp;
 	<a href="#usage">Usage</a> &nbsp;|&nbsp;
 	<a href="#monkey-see-robot-do">Story</a> &nbsp;|&nbsp;
@@ -43,18 +43,22 @@ export PYTHONPATH=src:$PYTHONPATH # make sure files in src gets picked up
 Train a policy:
 ```sh
 uv run ./scripts/train.py \
-			--human-demo-embeddings data/human_demo_embeddings.npy \
-			--total-timesteps 1000000 \
-			--eval-freq 200000 \
-			--ckpt-freq 200000 \
-			--similarity-weight 0.0 \
-			--success-weight 500.0 \
-			--gripper-weight 0.0 \
-			--z-weight 0.0 \
-			--ent-coef 0.01
+		--human-demo-embeddings data/human_demo_embeddings.npy \
+		--total-timesteps 1000000 \
+		--eval-freq 200000 \
+		--ckpt-freq 200000 \
+		--similarity-weight 0.0 \
+		--success-weight 500.0 \
+		--gripper-weight 0.0 \
+		--z-weight 0.0 \
+		--ent-coef 0.01
 ```
 
-To compile a human demo video into the embeddings file, first split the video into numbered JPEG frames with FFmpeg. The folder must be named after the video, with `_frames` appended:
+### Compiling the human video embeddings
+
+An example video and its embeddings are provided in the `data` folder. But this is the instruction if you wish to use a different video.
+
+First split the video into numbered JPEG frames with FFmpeg. The folder must be named after the video, with `_frames` appended:
 ```sh
 mkdir -p data/human_demo_frames
 ffmpeg -i data/human_demo.mp4 -q:v 2 -start_number 1 data/human_demo_frames/%06d.jpg
@@ -70,7 +74,8 @@ Then track the fingers and tabletop tape with SAM 2 to write `gripper_and_object
 uv run scripts/extract_supervision_csv.py \
 		--frames-dir data/human_demo_frames \
 		--tape-points 710 100 710 200 710 250 \
-		--finger-points 200 600 800 600
+		--finger-points 200 600 800 600 \
+		--checkpoint sam2.1_hiera_large.pt
 ```
 The `--tape-points` and `--finger-points` are `x y` clicks on frame 000001 (foreground prompts for SAM 2). Adjust them to your own video.
 
