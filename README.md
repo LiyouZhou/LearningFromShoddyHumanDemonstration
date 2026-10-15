@@ -10,11 +10,11 @@
 	</td></tr>
 </table>
 
-This is an image of task 8 in the Libero goal benchmark suite. The robot is asked to pick up the bowl and place it on the plate.
+This is an image of task 8 in the Libero goal benchmark suite[^1]. The robot is asked to pick up the bowl and place it on the plate.
 
-By learning from 50 episodes of teleoperated demonstrations, numerous papers have reported close to 100\% success rate just from pure behaviour cloning. Teleoperated data have zero visual gap and morphology gap, hence establishing the translation from current camera image to next robot action is relatively easy to do.
+By learning from 50 episodes of teleoperated demonstrations, numerous papers have reported close to 100\% success rate just from pure behaviour cloning[^2][^3][^4]. Teleoperated data have zero visual gap and morphology gap, hence establishing the translation from current camera image to next robot action is relatively easy to do.
 
-https://alpha-nist.github.io/ also showed very recently that massively parallel simulation can brute force the emergence of very dexterous multistep skills. Hell, GPT-Astra could probably zero-shot this bad boy if I'm willing to pay the cloud thinking machine some of my hard-earned cash. Alas, I'm not.
+[^5] also showed very recently that massively parallel simulation can brute force the emergence of very dexterous multistep skills. Hell, GPT-Astra could probably zero-shot this bad boy if I'm willing to pay the cloud thinking machine some of my hard-earned cash. Alas, I'm not.
 
 Acknowledging that some of these much better approaches exist, I want to explore an alternative route. This is a video I took on my phone, as the repo title suggests, shoddily produced:
 
@@ -129,3 +129,16 @@ This is the point where we should let go and let the robot explore the world and
 		</td>
 	</tr>
 </table>
+
+## Usage
+
+
+## Reference
+
+[^1] Liu, Bo, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, and Peter Stone. "Libero: Benchmarking knowledge transfer for lifelong robot learning." Advances in Neural Information Processing Systems 36 (2023): 44776-44791. https://libero-project.github.io/main.html
+[^2] Shukor, Mustafa, Dana Aubakirova, Francesco Capuano, Pepijn Kooijmans, Steven Palma, Adil Zouitine, Michel Aractingi et al. "Smolvla: A vision-language-action model for affordable and efficient robotics." arXiv preprint arXiv:2506.01844 (2025).
+[^3] Shi, Hao, Bin Xie, Yingfei Liu, Lin Sun, Fengrong Liu, Tiancai Wang, Erjin Zhou, Haoqiang Fan, Xiangyu Zhang, and Gao Huang. "Memoryvla: Perceptual-cognitive memory in vision-language-action models for robotic manipulation." In International Conference on Learning Representations, vol. 2026, pp. 18567-18602. 2026.
+[^4] Black, Kevin, Noah Brown, Danny Driess, Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai et al. "$\pi_0 $: A Vision-Language-Action Flow Model for General Robot Control." arXiv preprint arXiv:2410.24164 (2024).
+[^5] Zhang, Octi, Iretiayo Akinola, Rosario Scalise, Mateo Guaman Castro, Patrick Yin, Tobias Widmer, Miles Macklin et al. "AlphaNIST: Emergent Assembly Skills from Binary Task Rewards." arXiv preprint arXiv:2610.13354 (2026). https://alpha-nist.github.io/
+[^6] Siméoni, Oriane, Huy V. Vo, Maximilian Seitzer, Federico Baldassarre, Maxime Oquab, Cijo Jose, Vasil Khalidov et al. "Dinov3." arXiv preprint arXiv:2508.10104 (2025). https://github.com/facebookresearch/dinov3
+[^7] Zhu, Chenchen, Saksham Suri, Cijo Jose, Maxime Oquab, Marc Szafraniec, Wei Wen, Yunyang Xiong et al. "Efficient Universal Perception Encoder." arXiv preprint arXiv:2603.22387 (2026). https://github.com/facebookresearch/EUPE
