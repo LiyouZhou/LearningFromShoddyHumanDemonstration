@@ -54,11 +54,11 @@ The RL converged within 60k steps to this:
 	</td></tr>
 </table>
 
-I'm blown away by how structurally similar it is already to the original video. The robot, like the human video, goes down towards the ball and even approaches the ball on the right-hand side. This is from purely comparing the direction of the high-dimensional vectors in the embedding space.
+I'm blown away by how structurally similar it is already to the original video. The robot, like the human video, goes down towards the bowl and even approaches the bowl on the right-hand side. This is based purely on comparing the direction of the high-dimensional vectors in the embedding space.
 
 ## More Supervisions
 
-But the visual similarity alone wasn't able to carry the whole task to completion. Because once the robot picks up the ball, almost the entirety of the camera view is filled up by the bowl itself. Then, from that point on, all the frames look similar.
+But the visual similarity alone wasn't able to carry the whole task to completion. Because once the robot picks up the bowl, almost the entirety of the camera view is filled up by the bowl itself. Then, from that point on, all the frames look similar.
 
 I engineered two more rewards to try to guide the robots into completing the task. 
 
