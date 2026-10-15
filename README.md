@@ -12,8 +12,11 @@
 
 <table border="0">
 	<tr><td align="center">
-		<img src="docs/task.png" alt="Image of the simulated task" width="400"><br>
+		<img src="docs/task.png" alt="Image of the simulated task" height="200"><br>
 		<sub>Fig. 1: LIBERO Goal task 8: move the bowl onto the plate.</sub>
+	</td><td align="center">
+		<img src="docs/shoddy_human_demo.jpg" alt="The shoddy human demonstration" height="200"><br>
+		<sub>Fig. 2: The Shoddy Human Demonstration</sub>
 	</td></tr>
 </table>
 
@@ -90,7 +93,7 @@ Acknowledging that some of these much better approaches exist, I want to explore
 <table border="0">
 	<tr><td align="center">
 		<a href="data/human_demo_4.mp4"><img src="docs/human_demo_4.gif" alt="Human demonstration" width="400"></a><br>
-		<sub>Fig. 2: Phone-recorded human demonstration.</sub>
+		<sub>Fig. 3: Phone-recorded human demonstration.</sub>
 	</td></tr>
 </table>
 
@@ -115,11 +118,11 @@ The RL converged within 60k steps to this:
 <table border="0">
 	<tr><td align="center">
 		<a href="docs/visual_similarity_only.mp4"><img src="docs/visual_similarity_only.gif" alt="Visual similarity run" width="400" height="200"></a><br>
-		<sub>Fig. 3: Robot evaluation after visual-similarity training.</sub>
+		<sub>Fig. 4: Robot evaluation after visual-similarity training.</sub>
 	</td>
     <td align="center">
 		<img src="docs/pure_visual_similarity_train_graph.png" alt="Pure visual similarity training graph" width="206" height="200"><br>
-		<sub>Fig. 4: Training curve (average reward vs simulation steps) for the visual-similarity run.</sub>
+		<sub>Fig. 5: Training curve (average reward vs simulation steps) for the visual-similarity run.</sub>
 	</td></tr>
 </table>
 
@@ -134,7 +137,7 @@ I engineered two more rewards to try to guide the robots into completing the tas
 <table border="0">
 	<tr><td align="center">
 		<img src="docs/segment_anything.png" alt="Segment anything" width="400"><br>
-		<sub>Fig. 5: Prompt points in frame zero of the video for SAM 2 tracking of the fingers and tabletop tape.</sub>
+		<sub>Fig. 6: Prompt points in frame zero of the video for SAM 2 tracking of the fingers and tabletop tape.</sub>
 	</td></tr>
 </table>
 
@@ -149,11 +152,11 @@ The tracked fingers are used to calculate a gripper open/close state. And the wi
 <table border="0">
 	<tr><td align="bottom">
 		<img src="docs/z_supervision.png" alt="Object-height supervision" height="200"><br>
-		<sub>Fig.6: Object-height supervision from the tabletop tape.</sub>
+		<sub>Fig.7: Object-height supervision from the tabletop tape.</sub>
 	</td>
     <td align="bottom">
 		<img src="docs/gripper_supervision.png" alt="Gripper supervision" height="200"><br>
-		<sub>Fig.7: Gripper-state supervision from the human demonstration.</sub>
+		<sub>Fig.8: Gripper-state supervision from the human demonstration.</sub>
 	</td>
     </tr>
 </table>
@@ -165,10 +168,10 @@ The policy now successfully grabs the bowl and makes a vague attempt to lift it.
 <table border="0">
 	<tr><td align="center">
 		<a href="docs/all_rewards.mp4"><img src="docs/all_rewards.gif" alt="Combined rewards run" height="200"></a><br>
-		<sub>Fig. 8: Robot evaluation with the combined reward signals.</sub>
+		<sub>Fig. 9: Robot evaluation with the combined reward signals.</sub>
 	</td><td align="center">
 		<img src="docs/all_rewards_training_graph.png" alt="Combined rewards training graph" height="200"><br>
-		<sub>Fig. 9: Training curve, reward vs steps, for the combined-reward run.</sub>
+		<sub>Fig. 10: Training curve, reward vs steps, for the combined-reward run.</sub>
 	</td></tr>
 </table>
 
@@ -183,7 +186,7 @@ This is the point where we should let go and let the robot explore the world and
 <table border="0">
 	<tr><td align="center">
 		<img src="docs/success_rate_final_hurdle.png" alt="Average success rate across 2 runs. First run in red with all reward signals, 2nd run in orange continuing from the first using only sparse success reward." width="200"><br>
-		<sub>Fig. 10: Average success rate across 2 runs.<br>
+		<sub>Fig. 11: Average success rate across 2 runs.<br>
 			First run in red with all reward signals.<br>
 			Second run in orange continuing from the first using only sparse success reward.</sub>
 	</td>
@@ -194,7 +197,7 @@ This is the point where we should let go and let the robot explore the world and
 	<tr>
 		<td align="center">
 		<a href="docs/final_hurdle.mp4"><img src="docs/final_hurdle.gif" alt="Final-hurdle robot evaluation" width="400" height="200"></a><br>
-		<sub>Fig. 11: Final robot policy. Success rate > 40%</sub>
+		<sub>Fig. 12: Final robot policy. Success rate > 40%</sub>
 		</td>
 	</tr>
 </table>
@@ -211,7 +214,7 @@ Some people may ask, "Why not just brute force RL the whole thing?". This is 1 m
 	<tr>
 		<td align="center">
 		<a href="docs/binary_reward.mp4"><img src="docs/binary_reward.gif" alt="Binary reward robot evaluation" width="400" height="200"></a><br>
-		<sub>Fig. 12: Robot evaluation with the binary success reward.</sub>
+		<sub>Fig. 13: Robot evaluation with the binary success reward.</sub>
 		</td>
 	</tr>
 </table>
