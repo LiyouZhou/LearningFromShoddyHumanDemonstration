@@ -32,7 +32,6 @@
 ## Usage
 
 Create the venv:
-
 ```sh
 uv venv --python 3.10
 source .venv/bin/activate 
@@ -56,9 +55,12 @@ uv run ./scripts/train.py \
 
 ### Compiling the human video embeddings
 
+<details>
+
+<summary>If you want to use your own video. Expand for detailed instructions.</summary>
 An example video and its embeddings are provided in the `data` folder. But this is the instruction if you wish to use a different video.
 
-First split the video into numbered JPEG frames with FFmpeg. The folder must be named after the video, with `_frames` appended:
+First, split the video into numbered JPEG frames with FFmpeg. The folder must be named after the video, with `_frames` appended:
 ```sh
 mkdir -p data/human_demo_frames
 ffmpeg -i data/human_demo.mp4 -q:v 2 -start_number 1 data/human_demo_frames/%06d.jpg
@@ -86,6 +88,7 @@ uv run scripts/encode_human_video.py \
 		--output data/human_demo_embeddings.npy \
 		--gripper-closed-threshold=200
 ```
+</details>
 
 ## Monkey See, Robot Do
 
